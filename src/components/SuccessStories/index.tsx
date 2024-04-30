@@ -7,7 +7,7 @@ import storiesObj from "./storiesObj";
 
 const SuccessStories = () => {
 	return (
-		<div className="flex flex-col  md:mx-[10%] justify-center items-center mt-5 md:mt-[70px]">
+		<div className="flex flex-col  md:mx-[10%] justify-center items-center mt-[30px] md:mt-[70px] mb-[50px] md:mb-[80px]">
 			<div>
 				<p className="text-white font-[700] text-[32px] ">
 					Client Success Stories

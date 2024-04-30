@@ -1,5 +1,6 @@
 /** @format */
 
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import KeyServices from "@/components/KeyServices";
 import Navbar from "@/components/Navbar";
@@ -15,6 +16,7 @@ export default function Home() {
 				<KeyServices />
 				<WhyChooseUS />
 				<SuccessStories />
+				<Footer />
 			</div>
 		</div>
 	);

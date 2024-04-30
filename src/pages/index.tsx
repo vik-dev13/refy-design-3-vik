@@ -12,7 +12,7 @@ export default function Home() {
 		<div className="flex flex-col ">
 			<Navbar />
 			<HeroSection />
-			<div className="flex flex-col bg-background-primary ">
+			<div className="flex flex-col bg-background-primary">
 				<KeyServices />
 				<WhyChooseUS />
 				<SuccessStories />

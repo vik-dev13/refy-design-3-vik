@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MayIHelp from "../MayIHelp";
 
 const col1 = ["Home", "Who we are", "What we do", "Pricing", "Career"];
 const col2 = ["More Info", "Privacy Policy", "Terms of Use", "Legal"];
@@ -28,8 +29,13 @@ const followUs = [
 
 const Footer = () => {
 	return (
-		<div className="w-full bg-black text-white relative flex flex-col py-[40px] md:py-[60px] gap-4">
-			{/* <div >Image</div> */}
+		<div className="w-full bg-black text-white relative flex flex-col py-[60px] md:py-[80px] gap-4">
+			<div className="fixed bottom-4 right-4  md:absolute md:top-[-60px] md:right-7  item-center">
+				<MayIHelp />
+				<p className="text-[12px] md:text-[14px] text-center md:mt-[-20px] mt-[-15px]">
+					May I Help
+				</p>
+			</div>
 			<div className="flex flex-row items-center mx-[10%] gap-3">
 				<div className="h-[30px] w-[30px] relative">
 					<Image src="/images/logo-light.png" fill alt="light-logo" />

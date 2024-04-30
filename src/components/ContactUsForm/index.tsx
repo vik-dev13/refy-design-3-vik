@@ -22,8 +22,13 @@ const Input = ({ name, value, onChange }: InputProps) => {
 	);
 };
 
-const ContactUsForm = () => {
+const ContactUsForm = ({
+	setIsOpen,
+}: {
+	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
 	const [formData, setFormData] = React.useState<{} | any>({});
+	const [message, setMessage] = React.useState<string>("");
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
 	) => {
@@ -31,6 +36,41 @@ const ContactUsForm = () => {
 		let value = e.target?.value;
 		setFormData({ ...formData, [inputName]: value });
 	};
+
+	const handleSubmit = async () => {
+		if (
+			!formData?.name ||
+			!formData?.email ||
+			!formData?.phone ||
+			!formData?.company ||
+			!formData?.message
+		) {
+			return;
+		}
+		try {
+			const response = await fetch("/api/contactUs", {
+				method: "POST",
+				body: JSON.stringify(formData),
+			});
+			if (response.status === 200) {
+				setMessage(
+					"Message submitted successfully. We will get back to you soon.",
+				);
+				setTimeout(() => {
+					setIsOpen(false);
+				}, 2000);
+			}
+		} catch (error: any) {
+			console.log(error);
+		}
+	};
+
+	if (message)
+		return (
+			<div className="w-full h-[120px] flex flex-col justify-center items-center ">
+				{message}
+			</div>
+		);
 
 	return (
 		<div className="flex flex-col gap-4">
@@ -82,7 +122,10 @@ const ContactUsForm = () => {
 				></textarea>
 			</div>
 			<div className="w-full flex flex-row justify-end ">
-				<button className="bg-green-primary rounded-[100px] px-4 py-3 text-black w-[40%]">
+				<button
+					onClick={handleSubmit}
+					className="bg-green-primary rounded-[100px] px-4 py-3 text-black w-[40%]"
+				>
 					Submit
 				</button>
 			</div>

@@ -18,7 +18,7 @@ const MayIHelp = () => {
 				setIsOpen={setIsDialogOpen}
 				title="Contact Us"
 			>
-				<ContactUsForm />
+				<ContactUsForm setIsOpen={setIsDialogOpen} />
 			</DialogBox>
 		</div>
 	);

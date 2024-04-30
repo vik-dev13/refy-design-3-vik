@@ -39,7 +39,7 @@ export default function DialogBox({
 		<>
 			<div
 				ref={myDivRef}
-				className="fixed z-1000 bg-[#2a2a2a] md:left-[20%]  top-[20%] rounded-lg  min-w-[90%] min-h-[50vh] md:!min-w-[80vh] p-4 text-white mx-[5%]"
+				className="fixed z-1000 bg-[#2a2a2a] md:left-[20%]  top-[8%] md:top-[20%] rounded-lg  min-w-[90%] min-h-[50vh] md:!min-w-[80vh] p-4 text-white mx-[5%]"
 			>
 				<div className="flex flex-col gap-4">
 					<div className="flex flex-row justify-between px-2">

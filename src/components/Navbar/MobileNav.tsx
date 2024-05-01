@@ -8,9 +8,9 @@ const MobileNav = () => {
 	return (
 		<div className="flex md:!hidden bg-green-primary text-black flex-row items-center justify-between py-1.5 px-2 h-[60px]">
 			<CompanyLogoName />
-			<div className="relative h-[30px] w-[30px]">
+			{/* <div className="relative h-[30px] w-[30px]">
 				<Image src="/images/hamburger.png" alt="logo" fill />
-			</div>
+			</div> */}
 		</div>
 	);
 };
